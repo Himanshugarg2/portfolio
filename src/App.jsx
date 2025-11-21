@@ -1,6 +1,8 @@
 import React from "react";
 import Portfolio from "./components/Portfolio";
-import "./app.css";
+
+import "./App.css";
+
 export default function App() {
   return <Portfolio />;
 }
