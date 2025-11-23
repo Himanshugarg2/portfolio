@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Section from "../ui/Section";
@@ -10,19 +10,6 @@ export default function About() {
   // ✅ Images from /public
   const workingImage = "/working.png";
   const greetingImage = "/greeting.png";
-
-  // ✅ Auto return after 5–10 sec
-  useEffect(() => {
-    if (!isWaving) return;
-
-    const randomTime = Math.floor(Math.random() * 5000) + 5000; // 5000–10000 ms
-
-    const timer = setTimeout(() => {
-      setIsWaving(false);
-    }, randomTime);
-
-    return () => clearTimeout(timer);
-  }, [isWaving]);
 
   return (
     <Section id="about">
@@ -43,19 +30,20 @@ export default function About() {
           </div>
 
           {/* ✅ IMAGE SECTION */}
-          <div className="relative aspect-square bg-stone-200 rounded-2xl overflow-hidden shadow-xl shadow-stone-200/50">
+          <div className="relative w-full aspect-square bg-stone-200 rounded-2xl overflow-hidden shadow-xl shadow-stone-200/50 mx-auto max-w-[260px] md:max-w-[320px]">
             <AnimatePresence mode="wait">
-    <motion.img
-      key={isWaving ? "greeting" : "working"}
-      src={isWaving ? greetingImage : workingImage}
-      alt={isWaving ? "Waving hello" : "Working / coding"}
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className="object-cover w-full h-full absolute top-0 left-0"
-    />
-  </AnimatePresence>
+              <motion.img
+                key={isWaving ? "greeting" : "working"}
+                src={isWaving ? greetingImage : workingImage}
+                alt={isWaving ? "Waving hello" : "Working / coding"}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                onError={(e) => (e.target.src = workingImage)}
+                className="object-cover w-full h-full absolute top-0 left-0"
+              />
+            </AnimatePresence>
 
             {/* ✅ Click to Say Hi */}
             {!isWaving && (
@@ -71,7 +59,7 @@ export default function About() {
               </motion.div>
             )}
 
-            {/* ✅ Back overlay while waving */}
+            {/* ✅ Manual Back to Work */}
             {isWaving && (
               <motion.div
                 initial={{ opacity: 0 }}
