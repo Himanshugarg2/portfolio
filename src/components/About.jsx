@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-import Section from '../ui/Section';
-import FadeIn from '../ui/FadeIn';
+import Section from "../ui/Section";
+import FadeIn from "../ui/FadeIn";
 
-const About = () => {
+export default function About() {
   const [isWaving, setIsWaving] = useState(false);
 
-  const workingImage =
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-  const wavingImage =
-    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+  // ✅ Images from /public
+  const workingImage = "/working.png";
+  const greetingImage = "/greeting.png";
+
+  // ✅ Auto return after 5–10 sec
+  useEffect(() => {
+    if (!isWaving) return;
+
+    const randomTime = Math.floor(Math.random() * 5000) + 5000; // 5000–10000 ms
+
+    const timer = setTimeout(() => {
+      setIsWaving(false);
+    }, randomTime);
+
+    return () => clearTimeout(timer);
+  }, [isWaving]);
 
   return (
     <Section id="about">
@@ -20,32 +32,32 @@ const About = () => {
             <h3 className="text-2xl font-semibold mb-6">About Me</h3>
 
             <p className="text-stone-600 leading-7 mb-4">
-              I am a final year Computer Engineering student with a deep passion for data and software architecture. My academic journey has been
-              focused on mastering the intersection of full-stack development and artificial intelligence.
+              I am a final year Computer Engineering student with a deep passion
+              for data and software architecture.
             </p>
 
             <p className="text-stone-600 leading-7 mb-6">
-              Whether it's training a machine learning model to recognize patterns or building a responsive React application to display those insights,
-              I love solving problems that matter.
+              Whether it's training a machine learning model or building a
+              full-stack app, I love solving real problems.
             </p>
           </div>
 
-          {/* IMAGE SECTION */}
+          {/* ✅ IMAGE SECTION */}
           <div className="relative aspect-square bg-stone-200 rounded-2xl overflow-hidden shadow-xl shadow-stone-200/50">
             <AnimatePresence mode="wait">
-              <motion.img
-                key={isWaving ? "waving" : "working"}
-                src={isWaving ? wavingImage : workingImage}
-                alt={isWaving ? "Himanshu waving" : "Himanshu working"}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="object-cover w-full h-full absolute top-0 left-0"
-              />
-            </AnimatePresence>
+    <motion.img
+      key={isWaving ? "greeting" : "working"}
+      src={isWaving ? greetingImage : workingImage}
+      alt={isWaving ? "Waving hello" : "Working / coding"}
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="object-cover w-full h-full absolute top-0 left-0"
+    />
+  </AnimatePresence>
 
-            {/* ✅ CLICK TO SAY HI */}
+            {/* ✅ Click to Say Hi */}
             {!isWaving && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -59,7 +71,7 @@ const About = () => {
               </motion.div>
             )}
 
-            {/* ✅ BACK TO WORK OVERLAY */}
+            {/* ✅ Back overlay while waving */}
             {isWaving && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -77,6 +89,4 @@ const About = () => {
       </FadeIn>
     </Section>
   );
-};
-
-export default About;
+}
