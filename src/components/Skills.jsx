@@ -1,41 +1,48 @@
-import React from "react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import Section from '../ui/Section';
+import FadeIn from '../ui/FadeIn';
+import { SKILLS_DATA } from '../data/portfolio';
 
-const skills = [
-  { name: "C", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
-  { name: "C++", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
-  { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-  { name: "Go", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
-  { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-  { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "Flask", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
-  { name: "GraphQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
-  { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-  { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-  { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-  { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-  { name: "GitHub Actions", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-  { name: "Jenkins", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" },
-  { name: "Kubernetes", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" }
-];
-
-export default function Skills() {
+const SkillCard = ({ skill }) => {
   return (
-    <section className="max-w-3xl mx-auto">
-      <h2 className="text-2xl font-semibold mb-3">Skills</h2>
+    <motion.div
+      whileHover={{ y: -5 }}
+      className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm flex flex-col items-center justify-center gap-3 hover:shadow-md transition-all"
+    >
+      {/* ✅ Render black & white logo */}
+      <img
+        src={skill.logo}
+        alt={skill.name}
+        className="w-8 h-8 opacity-80"
+      />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {skills.map((skill) => (
-          <div
-            key={skill.name}
-            className="bg-white/70 backdrop-blur rounded-xl shadow p-4 flex flex-col items-center justify-center hover:shadow-xl transition"
-          >
-            <img src={skill.logo} alt={skill.name} className="w-10 h-10 mb-2" />
-            <span className="font-medium text-center">{skill.name}</span>
-          </div>
-        ))}
-      </div>
-    </section>
+      <span className="font-medium text-stone-800">
+        {skill.name}
+      </span>
+    </motion.div>
   );
-}
+};
+
+const Skills = () => {
+  return (
+    <Section id="skills" className="bg-stone-100/50 rounded-3xl my-10">
+      <FadeIn>
+        <div className="text-center mb-12">
+          <h3 className="text-2xl font-semibold mb-2">Technical Arsenal</h3>
+          <p className="text-stone-500">
+            Tools and technologies I work with.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {SKILLS_DATA.map((skill, index) => (
+            <SkillCard key={index} skill={skill} />
+          ))}
+        </div>
+      </FadeIn>
+    </Section>
+  );
+};
+
+export default Skills;

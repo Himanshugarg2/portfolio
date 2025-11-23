@@ -1,8 +1,26 @@
-import React from "react";
-import Portfolio from "./components/Portfolio";
-
-import "./App.css";
-
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import './App.css';
 export default function App() {
-  return <Portfolio />;
+  return (
+    <div className="min-h-screen bg-stone-50 text-stone-800 font-sans selection:bg-stone-200">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
 }
