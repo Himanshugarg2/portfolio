@@ -25,8 +25,12 @@ const Hero = () => {
           <a href="#contact" className="px-6 py-3 bg-stone-900 text-white rounded-lg hover:bg-stone-800 transition-all shadow-lg shadow-stone-200/50">
             Contact Me
           </a>
-          <a href="#" className="px-6 py-3 bg-white border border-stone-200 text-stone-800 rounded-lg hover:bg-stone-100 transition-all">
-            View Resume
+          <a
+            href="/HimanshuGarg%20Resume.pdf"
+            download="HimanshuGarg_Resume.pdf"
+            className="px-6 py-3 bg-white border border-stone-200 text-stone-800 rounded-lg hover:bg-stone-100 transition-all"
+          >
+            Download Resume
           </a>
         </div>
       </FadeIn>

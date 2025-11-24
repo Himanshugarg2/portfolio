@@ -81,21 +81,21 @@ export const PROJECTS_DATA = [
     title: "AI-Powered Quiz Generator & Scheduler (Quizzify)",
     desc: "Full-stack AI quiz platform that generates quizzes from user topics or uploaded material with Bloom’s taxonomy difficulty levels and AI-based auto-checking.",
     stack: ["React", "Node.js", "Firebase", "Gemini API"],
-    link: "https://your-live-link.com", // replace if available
+    link: "https://ashy-bush-044306a10.6.azurestaticapps.net", // replace if available
     github: "https://github.com/yourusername/quizzify"
   },
   {
     title: "Official Event Website – Dreamz Nexus 2K25",
     desc: "Modern, responsive event website with secure Google authentication and real-time event registration system for large-scale student participation.",
     stack: ["React", "Tailwind CSS", "Firebase Auth", "Firestore", "Vite"],
-    link: "https://your-live-event-site.com", // replace if live
+    link: "https://www.dreamznexus2k25.co.in/", // replace if live
     github: "https://github.com/yourusername/dreamz-nexus"
   },
   {
     title: "Vaccine Management System (Immunilink)",
     desc: "Patient–doctor vaccination portal with role-based access, immunization tracking, and admin-level CRUD operations.",
     stack: ["MongoDB", "Express.js", "React.js", "Node.js"],
-    link: "https://your-live-demo.com", // optional
+    link: "https://immunilink-4u.onrender.com/", // optional
     github: "https://github.com/yourusername/immunilink"
   }
 ];
