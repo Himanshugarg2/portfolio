@@ -29,6 +29,38 @@ const Experience = () => {
           </ul>
         </div>
 
+        {/* ✅ KJSCE Web Development & AI Internship */}
+<div className="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm relative overflow-hidden mb-8">
+  <div className="absolute top-0 left-0 w-1 h-full bg-stone-900"></div>
+
+  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+    <div>
+      <h4 className="text-xl font-bold text-stone-900">Web Development & AI Intern</h4>
+      <p className="text-stone-500">KJSCE</p>
+    </div>
+    <span className="mt-2 md:mt-0 px-3 py-1 bg-stone-100 text-stone-600 text-xs font-medium rounded-full">
+      JUNE 2024 – JULY 2024
+    </span>
+  </div>
+
+  <ul className="list-disc list-inside text-stone-600 space-y-2 text-sm md:text-base">
+    <li>Developed a responsive web interface for monitoring Air Quality Index (AQI) using the AQICN API.</li>
+    <li>Built the application using HTML for the frontend and Flask for backend data processing.</li>
+    <li>Integrated a Gemini-based chatbot to assist users with air-quality–related health queries.</li>
+    <li>Deployed the complete solution on PythonAnywhere: 
+      <a 
+        href="https://breathesafenow.python.anywhere.com" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-blue-600 underline"
+      >
+        breathesafenow.python.anywhere.com
+      </a>.
+    </li>
+  </ul>
+</div>
+
+
         {/* ✅ KJSCE Data Science Internship */}
         <div className="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm relative overflow-hidden">
           <div className="absolute top-0 left-0 w-1 h-full bg-stone-900"></div>
