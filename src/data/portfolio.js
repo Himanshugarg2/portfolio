@@ -92,6 +92,13 @@ export const PROJECTS_DATA = [
     github: "https://github.com/yourusername/dreamz-nexus"
   },
   {
+    title: "Taskify – Focused Productivity Web App",
+    desc: `Taskify is a super cool web app that greets you with a message based on the time of day and displays a unique background image on every page refresh. You can set your main/focus task of the day and create a personalized to-do list.\n\nFeatures:\n- Home Page: Enter your name and press enter to route to the task page. Enjoy a new background image every refresh.\n- Task Page: Add your main/focus task of the day, mark it as done or clear it to create a new one.\n- To-Do Section: Add/manage tasks in a sleek section at the bottom right. Main task resets daily, but your to-do list remains intact.`,
+    stack: ["React", "Vite", "CSS"],
+    link: "https://taskify-4u.netlify.app/",
+    github: "https://github.com/Himanshugarg2/TASKIFY"
+  },
+  {
     title: "Vaccine Management System (Immunilink)",
     desc: "Patient–doctor vaccination portal with role-based access, immunization tracking, and admin-level CRUD operations.",
     stack: ["MongoDB", "Express.js", "React.js", "Node.js"],
