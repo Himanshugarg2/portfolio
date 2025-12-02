@@ -75,7 +75,7 @@ const Experience = () => {
     <li>Integrated a Gemini-based chatbot to assist users with air-quality–related health queries.</li>
     <li>Deployed the complete solution on PythonAnywhere: 
       <a 
-        href="https://breathesafenow.python.anywhere.com" 
+        href="https://breathesafenow.pythonanywhere.com/login" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="text-blue-600 underline"
