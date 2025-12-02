@@ -103,6 +103,6 @@ export const PROJECTS_DATA = [
     desc: "Patient–doctor vaccination portal with role-based access, immunization tracking, and admin-level CRUD operations.",
     stack: ["MongoDB", "Express.js", "React.js", "Node.js"],
     link: "https://immunilink-4u.onrender.com/", // optional
-    github: "https://github.com/yourusername/immunilink"
+    github: "https://github.com/Himanshugarg2/Vaccine_management-system.git"
   }
 ];
